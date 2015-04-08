@@ -1,0 +1,171 @@
+@CHARSET "UTF-8";
+/*유앤이 내과 웹 작업*/
+
+/*★★ BASE reset설정 ★★*/
+* {padding:0px; margin:0px; line-height:100%;}
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css')
+header,section,article,footer,nav,aside {display:block;}
+body,input,textarea,select,table,button { font-family: "Nanum Gothi",나눔고딕, 돋음, sans-serif; font-size:12px; color:#666666;  font-weight:normal;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal; font-size:100%;}
+caption, legend, #accessibility, .hidden{font-size: 0;line-height: 0;text-indent: -5000px;}
+img, fieldset, iframe {border:0 none; vertical-align:top;}
+iframe {display:block;}
+fieldset {font-size:0;}
+ul,ol {list-style:none; padding:0; margin:0;}
+a,span {color:#000; text-decoration:none; font-size:12px; letter-spacing: 0;}
+a {outline: none;}
+span, strong, em {display:inline-block; zoom:1; *display:inline; /*ie 7대응*/ vertical-align:middle;}
+em,address {font-style:normal; text-decoration:none;}
+table {border-collapse:collapse; font-family: "Dotum", 돋음; color:#4d4d4d; }
+hr {display:none;}
+label {cursor:pointer;}
+html, body {width:100%; height:100%; }
+body {min-width:1250px; border-collapse:separate; border-spacing:0px; word-wrap:break-word; letter-spacing:-0.4px; word-spacing:0px;-webkit-text-size-adjust: none;}
+#wrap {width:100%; height:100%; min-height: 100%;  -moz-transition: all 0.3s ease-out;  /* FF4+ */ -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */ -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */ -ms-transition: all 0.3s ease-out;  /* IE10 */ transition: all 0.3s ease-out;}
+
+#content{ position:relative; z-index:3; width:100%; height:100%; min-height: 100%;}
+
+
+/*배경 이미지 존*/
+ #bg {position:fixed; top:0; left:0; z-index:2; }
+.bgwidth { width: 100%;  }
+.bgheight { height: 100%;}
+
+
+/*sub 클래스별 이미지 변경*/
+ .sub_img_bg01 {float:left;  position: relative; height:auto !important; height:100%; min-height:100%; min-width:1280px; width: 100%; background:url('../images/sub_bg01.png') no-repeat center center; }
+ .sub_img_bg02 {float:left;  position: relative; height:auto !important; height:100%; min-height:100%; min-width:1280px; width: 100%; background:url('../images/sub_bg02.png') no-repeat center center; }
+ .sub_img_bg03 {float:left;  position: relative; height:auto !important; height:100%; min-height:100%; min-width:1280px; width: 100%; background:url('../images/sub_bg03.png') no-repeat center center; }
+ .sub_img_bg04 {float:left;  position: relative; height:auto !important; height:100%; min-height:100%; min-width:1280px; width: 100%; background:url('../images/sub_bg04.png') no-repeat center center; }
+ .sub_img_bg05 {float:left;  position: relative; height:auto !important; height:100%; min-height:100%; min-width:1280px; width: 100%; background:url('../images/sub_bg05.png') no-repeat center center; }
+ .sub_img_bg06 {float:left;  position: relative; height:auto !important; height:100%; min-height:100%; min-width:1280px; width: 100%; background:url('../images/sub_bg06.png') no-repeat center center; }
+
+
+/*top 상단 오른쪽 메뉴*/
+.top_menu {position:absolute; top:0px; right:0px; overflow:hidden;}
+.top_menu ul {float:left;}
+.top_menu ul li {float:left; overflow:hidden; *margin-right:-3px;}
+.top_menu ul .br_have {border-left:1px solid #e2e2e2; border-right:1px solid #e2e2e2;}
+.top_menu ul li a {font-size:0;}
+.top_menu ul li a img {border:0px; vertical-align:top;}
+
+
+/*바디*/
+.bg_body .logo {position:fixed; top:37px; left:43px; }
+.bg_body  .main_bg_txt {position:fixed; top:314px; left:43px;}
+.bg_body  .sub_bg_txt {position:fixed; top:152px; left:87px;}
+
+
+/*하단 메뉴*/
+.bottom_wrap { clear:both; position:absolute; left:0; bottom:0; width: 100%; min-width:1250px; overflow:hidden;  background:#fff6ea;}
+.bottom_wrap .bottom_menu {float:left;  margin-left:1px; overflow:hidden;}
+.bottom_wrap .bottom_menu ul li {float:left;  border-right:1px solid #e2e2e2; *margin-right:-3px;}
+
+
+/*gnb열기 버튼*/
+.gnb_openClose_btn {float:right;   margin:18px 24px 0 0;}
+.gnb_openClose_btn span {cursor:pointer;}
+.gnb_openClose_btn .allmenu_btn_off {background:url('../images/allmenu_btn_off.png') no-repeat; width:46px; height:46px; cursor:pointer;}
+.gnb_openClose_btn .allmenu_btn_off:hover { background:url('../images/allmenu_btn_on.png')  no-repeat; width:46px; height:46px; cursor:pointer;}
+
+.gnb_openClose_btn .allmenu_btn_on {display:none; background:url('../images/allmenu_btn_on.png') no-repeat; width:46px; height:46px; cursor:pointer;}
+.gnb_openClose_btn .allmenu_btn_on:hover { background:url('../images/allmenu_btn_off.png')  no-repeat; width:46px; height:46px; cursor:pointer;}
+
+
+
+
+
+
+
+
+
+/*gnb메뉴*/
+
+#slide_panel {width:320px;/* min-height: 950px; overflow:scroll; overflow-x:hidden;*/ height:100%;margin:38px 0 34px 0;overflow:hidden;}
+.enable_panel {margin-right:320px; margin-left:-320px;  overflow: hidden;}
+.gnb_wrapper {position: fixed; z-index:1; right:0; top:0; width:320px;height:100%;background:#3e4145 url('../images/gnb_gradation_x_bg.png') repeat-y left top !important;overflow:hidden;}
+.enable_panel .gnb_wrapper{z-index:2;}
+.gnb_wrap .gnb_menu {margin:0; overflow:hidden;}
+.gnb_wrap .gnb_menu>ul {padding:20px 70px 20px 29px; border-bottom:1px solid #494c50;}
+/*.gnb_wrap .gnb_menu>ul>li { padding:38px 0 34px 0;}*/
+.gnb_wrap .gnb_menu>ul>li>ul>li a {display:block; padding:0 28px;}
+.gnb_wrap .gnb_menu>ul>li>ul>li>ul>li a {display:block; padding: 7px  0; height:6px; line-height:6px;}
+.gnb_wrap .gnb_menu .subMn { margin:5px 0;}
+.gnb_wrap .gnb_menu .subMn:hover {background:#2f3139; }
+
+
+/*gnb 스크롤 버튼*/
+.menu_scroll_btn {padding:62px 0 0 29px;   position: fixed; bottom:10px; background:url('../images/gnb_gradation_y_bg.png') repeat-x;}
+.menu_scroll_btn span {cursor:pointer;}
+.menu_scroll_btn .allmenu_arrow_down {background:url('../images/allmenu_arrow_down.png') no-repeat;  width:230px; height:25px;}
+.menu_scroll_btn .allmenu_arrow_up {background:url('../images/allmenu_arrow_top.png') no-repeat;  width:230px; height:25px;}
+
+
+/*---서브 하위 메뉴---*/
+/*검진종합안내*/
+.gnb_wrap .gnb_menu .snb03_01_1 { background:url('../images/gnb/snb03_01_1_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_01_1:hover { background:url('../images/gnb/snb03_01_1_on.png') no-repeat 45px center;  height:13px;}
+/*검진항목*/
+.gnb_wrap .gnb_menu .snb03_01_2 { background:url('../images/gnb/snb03_01_2_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_01_2:hover { background:url('../images/gnb/snb03_01_2_on.png') no-repeat 45px center;  height:13px;}
+
+/*검진프로그램 및 비용*/
+.gnb_wrap .gnb_menu .snb03_02_1 { background:url('../images/gnb/snb03_02_1_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_02_1:hover { background:url('../images/gnb/snb03_02_1_on.png') no-repeat 45px center;  height:13px;}
+/*검진절차*/
+.gnb_wrap .gnb_menu .snb03_02_2 { background:url('../images/gnb/snb03_02_2_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_02_2:hover { background:url('../images/gnb/snb03_02_2_on.png') no-repeat 45px center;  height:13px;}
+/*검진시주의사항*/
+.gnb_wrap .gnb_menu .snb03_02_3 { background:url('../images/gnb/snb03_02_3_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_02_3:hover { background:url('../images/gnb/snb03_02_3_on.png') no-repeat 45px center;  height:13px;}
+
+/*일반건강검진*/
+.gnb_wrap .gnb_menu .snb03_03_1 { background:url('../images/gnb/snb03_03_1_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_03_1:hover { background:url('../images/gnb/snb03_03_1_on.png') no-repeat 45px center;  height:13px;}
+/*암건강검진*/
+.gnb_wrap .gnb_menu .snb03_03_2 { background:url('../images/gnb/snb03_03_2_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_03_2:hover { background:url('../images/gnb/snb03_03_2_on.png') no-repeat 45px center;  height:13px;}
+/*생애전환기검진*/
+.gnb_wrap .gnb_menu .snb03_03_3 { background:url('../images/gnb/snb03_03_3_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_03_3:hover { background:url('../images/gnb/snb03_03_3_on.png') no-repeat 45px center;  height:13px;}
+/*검진시주의사항*/
+.gnb_wrap .gnb_menu .snb03_03_4 { background:url('../images/gnb/snb03_03_4_off.png') no-repeat 45px center;  height:13px;}
+.gnb_wrap .gnb_menu .snb03_03_4:hover { background:url('../images/gnb/snb03_03_4_on.png') no-repeat 45px center;  height:13px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
