@@ -271,6 +271,8 @@ $.support.transition = (function(){
 			$('.allmenu_arrow_up').mouseleave(function(e) {
 				_this.stopSlide(e);
 			});
+			
+			this.panelHeightResize();
 
 			$(window).resize(function() {
 				// call panelHeight
@@ -297,7 +299,7 @@ $.support.transition = (function(){
 		panelHeightResize : function() {
 			
 			//set $slide height
-			this.wdHeight=parseInt(this.$w.height())-parseInt($(this).css('margin-top'))-parseInt($(this).css('margin-bottom'));
+			this.wdHeight=parseInt(this.$w.height())-parseInt($(this).css('margin-top'))-(parseInt($(this).find('.menu_scroll_btn').css('height'))+(parseInt($(this).find('.menu_scroll_btn').css('height'))/2));
 			$(this).height(this.wdHeight);
 			
 			//compare _currentY to maxHeight at slide down
