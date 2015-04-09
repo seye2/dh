@@ -121,91 +121,6 @@
 <!-- //wrap -->
 
 <script type="text/javascript">
-/*
-	var slideMenu=slideMenu || {};
-
-	slideMenu={
-		wdHeight:0,
-		maxHeight:0,
-		timer:null,
-		panelResize:function() {
-			slideMenu.wdHeight=parseInt($(window).height())-parseInt($('#slide_panel').css('margin-top'))-parseInt($('#slide_panel').css('margin-bottom'));
-
-			slideMenu.maxHeight=(slideMenu.wdHeight-$('#slide_panel #slides').outerHeight())-55;
-			$('#slide_panel').height(slideMenu.wdHeight);
-			$('.gnb_wrapper').height($(window).height());
-
-			$('.allmenu_arrow_down').live('mouseenter',function(e) {
-				slideMenu.startSlide(this,'down');
-			});
-			
-			$('.allmenu_arrow_up').live('mouseenter',function(e) {
-				slideMenu.startSlide(this,'up');
-			});
-
-			$('.allmenu_arrow_down').mouseleave(function(e) {
-				slideMenu.stopSlide(e);
-			});
-
-			$('.allmenu_arrow_up').mouseleave(function(e) {
-				slideMenu.stopSlide(e);
-			});
-
-			$(document).mouseleave(function(e) {
-				slideMenu.stopSlide(e);
-			});
-
-			$(window).resize(function() {
-				slideMenu.panelResize();
-			});
-
-		},
-		startSlide : function(that,dir) {
-			var _$that=$(that),
-				$slides=$('#slide_panel #slides'),
-				down='allmenu_arrow_down',
-				up='allmenu_arrow_up',
-				aniTime=5,
-				intervalTime=8;
-			
-			clearInterval(slideMenu.timer);
-			slideMenu.timer=setInterval(function() {
-				if(dir=='down') {
-					if(slideMenu.maxHeight<parseInt($slides.css('margin-top'))) {
-						$slides.stop(true,true).animate({
-							'margin-top':parseInt($slides.css('margin-top'))-1
-						},aniTime,function() {
-						});
-					} else {
-						clearInterval(slideMenu.timer);
-						//$('.'+down).removeClass(down).addClass(up);
-						//$('.'+up).trigger('mouseover');
-					}
-				} else {
-
-					if(0<(parseInt($slides.css('margin-top'))*-1)) {
-						$slides.stop(true,true).animate({
-							'margin-top':parseInt($slides.css('margin-top'))+1
-						},aniTime,function() {
-						});
-					} else {
-						clearInterval(slideMenu.timer);
-						//$('.'+up).removeClass(up).addClass(down);
-						//$('.'+down).trigger('mouseover');
-					}
-				}
-			},intervalTime);
-		},
-		stopSlide : function(e) {
-			$('#slide_panel #slides').stop(true,true);
-			clearInterval(slideMenu.timer);
-			e.stopPropagation();
-		}
-		
-	};
-
-	slideMenu.panelResize();
-*/
 
 //http://www.abeautifulsite.net/feature-detection-for-css-transitions-via-jquery-support/
 $.support.transition = (function(){
@@ -216,7 +131,7 @@ $.support.transition = (function(){
 })();
 
 // calling the plugin
-var ms = $('#slide_panel').mTicker();
+var ms = new $('#slide_panel').mTicker();
 
 // changes the default properties
 $.pluginSetup({
