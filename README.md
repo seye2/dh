@@ -1,5 +1,5 @@
 #jQuery slideMenu
-a jQuery plugin which renders a custom, menu move up,down,left,right on button over.
+a jQuery plugin which renders a custom, menu move up,down on button over.
 
 #reference
 jQuery Plugin Pattern URL : https://github.com/jquery-boilerplate/jquery-patterns
