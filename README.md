@@ -8,27 +8,27 @@ if browser support css3 transition, return browser status URL : http://www.abeau
 
 Usage:
 
-> $.support.transition = (function(){
->     var thisBody = document.body || document.documentElement,
->         thisStyle = thisBody.style,
->         support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined;
->     return support;
-> })();
-
-> // calling the plugin
-> var ms = new $('#slide_panel').mTicker();
-> // changes the default properties
-> $.pluginSetup({
-> 	aniTIme:5,
-> 	intervalTime:1000,
-> 	callback:function(){}
-> });
-> // for example reset options
-> // rechanges the default properties
-> $.pluginSetup({
-> 	aniTIme:5,
-> 	intervalTime:8,
-> 	callback:function(){}
-> });
-> // restart plugin
-> ms.mTicker();
+```
+ $.support.transition = (function(){
+     var thisBody = document.body || document.documentElement,
+         thisStyle = thisBody.style,
+         support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined;
+     return support;
+ })();
+ // calling the plugin
+ var ms = new $('#slide_panel').mTicker();
+ // changes the default properties
+ $.pluginSetup({
+ 	aniTIme:5,
+ 	intervalTime:1000,
+ 	callback:function(){}
+ });
+ // for example reset options
+ // rechanges the default properties
+ $.pluginSetup({
+ 	aniTIme:5,
+ 	intervalTime:8,
+ 	callback:function(){}
+ });
+ // restart plugin
+ ms.mTicker();
